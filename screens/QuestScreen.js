@@ -1,12 +1,11 @@
 import React from 'react';
 import {
     StyleSheet,
-    TextInput,
-
     Text,
     View,
 } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { RkButton, RkText } from "react-native-ui-kitten";
 
 
 export default class QuestScreen extends React.Component {
@@ -17,7 +16,14 @@ export default class QuestScreen extends React.Component {
     render() {
         return (
             <View style={styles.questsContainer}>
-                <Text>Quest Screen</Text>
+                <Text style={styles.titleText}>Quest title</Text>
+                <Text style={styles.descriptionText}>Quest description</Text>
+                <Text style={styles.rewardsText}>Rewards</Text>
+                <RkButton
+                    style={styles.button}
+                    onPress={null}>
+                    <RkText>Finalize</RkText>
+                </RkButton>
 
             </View>
         );
@@ -29,7 +35,21 @@ const styles = StyleSheet.create({
     questsContainer: {
         width: '100%',
         paddingLeft: 10,
-        paddingTop: 300,
+        paddingTop: 40,
         justifyContent: 'center'
+    },
+    titleText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    descriptionText: {
+        fontSize: 15,
+        paddingTop: 10,
+        textAlign: 'justify'
+    },
+    rewardsText: {
+        paddingTop: 10,
+        textAlign: 'center'
     }
 });
