@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     StyleSheet,
+    TextInput,
 
     Text,
     View,
@@ -17,6 +18,7 @@ export default class QuestScreen extends React.Component {
         return (
             <View style={styles.questsContainer}>
                 <Text>Quest Screen</Text>
+
             </View>
         );
     }

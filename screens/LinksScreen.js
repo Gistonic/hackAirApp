@@ -31,19 +31,19 @@ export default class LinksScreen extends React.Component {
         <ScrollView style={styles.root}>
             <View style={[styles.header, styles.bordered]}>
                 <Avatar img={this.state.data.photo} rkType='big' />
-                <RkText rkType='header2'>{`${this.state.data.firstName} ${this.state.data.lastName}`}</RkText>
+                <RkText rkType='header2' style={styles.text}>Gisela</RkText>
             </View>
             <View style={[styles.userInfo, styles.bordered]}>
                 <View style={styles.section}>
-                    <RkText rkType='header3' style={styles.space}>5</RkText>
+                    <RkText rkType='header3' style={styles.text}>5</RkText>
                     <RkText rkType='secondary1 hintColor'>Quests</RkText>
                 </View>
                 <View style={styles.section}>
-                    <RkText rkType='header3' style={styles.space}>{formatNumber(5)}</RkText>
+                    <RkText rkType='header3' style={styles.text}>{formatNumber(5)}</RkText>
                     <RkText rkType='secondary1 hintColor'>Level</RkText>
                 </View>
                 <View style={styles.section}>
-                    <RkText rkType='header3' style={styles.space}>3</RkText>
+                    <RkText rkType='header3' style={styles.text}>3</RkText>
                     <RkText rkType='secondary1 hintColor'>Airports</RkText>
                 </View>
             </View>
@@ -92,6 +92,12 @@ const styles = RkStyleSheet.create(theme => ({
     button: {
         flex: 1,
         alignSelf: 'center',
+    },
+    text: {
+        backgroundColor: 'transparent',
+        color: '#000',
+        fontSize: 20,
+        paddingBottom: 5
     },
 }));
 

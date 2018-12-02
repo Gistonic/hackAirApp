@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+    ImageBackground,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -22,13 +23,19 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.questsContainer}>
-          <MenuButton  itemImage='../assets/coffe.png' amplada={'50%'}
-                       ar={1} name='queueing'
-                       />
-          <MenuButton  itemImage='../assets/coffe.png' amplada={'50%'}
-                       ar={1} name='just bored'
-                       onPress={() => {
-                           this.props.navigation.navigate('Quest')}}/>
+
+          <TouchableOpacity  onPress={() => {
+              this.props.navigation.navigate('Quest')}}>
+              <Image style={styles.img} source={require('../assets/queuing.png')} />
+
+          </TouchableOpacity>
+
+
+          <TouchableOpacity  onPress={() => {
+              this.props.navigation.navigate('Quest')}}>
+              <Image style={styles.img} source={require('../assets/justBored.png')} />
+
+          </TouchableOpacity>
       </View>
     );
   }
@@ -44,6 +51,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center'
+    },
+    img:{
+
     }
 });
 
