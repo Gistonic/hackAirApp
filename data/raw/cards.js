@@ -3,7 +3,7 @@ const cards =
     id: 1,
     name: 'Current balance',
     bank: 'Wallet',
-    amount: 40,
+    amount: 50,
     date: '',
     cardNo: '',
     type: 'visa',
