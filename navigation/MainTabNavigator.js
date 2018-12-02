@@ -7,12 +7,18 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import QuestScreen from "../screens/QuestScreen";
+import Quest1Screen from "../screens/Quest1Screen";
+import Quest2Screen from "../screens/Quest2Screen";
+import Quest3Screen from "../screens/Quest3Screen";
 import FlightScreen from "../screens/FlightScreen";
 
 const HomeStack = createStackNavigator({
   Flight: FlightScreen,
     Home: HomeScreen,
-    Quest: QuestScreen
+    Quest: QuestScreen,
+    Quest1: Quest1Screen,
+    Quest2: Quest2Screen,
+    Quest3: Quest3Screen
 });
 
 HomeStack.navigationOptions = {
@@ -58,7 +64,7 @@ SettingsStack.navigationOptions = {
 };
 
 const QuestStack = createStackNavigator({
-    Quest: QuestScreen,
+    Quest: Quest1Screen,
 });
 
 export default createBottomTabNavigator({

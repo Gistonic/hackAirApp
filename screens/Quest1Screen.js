@@ -8,7 +8,7 @@ import { createAppContainer } from 'react-navigation';
 import { RkButton, RkText } from "react-native-ui-kitten";
 
 
-export default class QuestScreen extends React.Component {
+export default class Quest1Screen extends React.Component {
     static navigationOptions = {
         header: null,
     };
@@ -16,9 +16,9 @@ export default class QuestScreen extends React.Component {
     render() {
         return (
             <View style={styles.questsContainer}>
-                <Text style={styles.titleText}>Quest title</Text>
-                <Text style={styles.descriptionText}>Quest description</Text>
-                <Text style={styles.rewardsText}>Rewards</Text>
+                <Text style={styles.titleText}>First mission on Helsinki Airport</Text>
+                <Text style={styles.descriptionText}>The password is something that 'is in the air'</Text>
+                <Text style={styles.rewardsText}>10 AirCoins</Text>
                 <TextInput
                     placeholder={'Password'}
                     placeholderTextColor="#202020"
@@ -28,12 +28,12 @@ export default class QuestScreen extends React.Component {
                 <View style={styles.rowContainer}>
                     <RkButton
                         style={styles.finalizeButton}
-                        onPress={null}>
+                        onPress={() => {this.props.navigation.navigate('Quest2')}}>
                         <RkText>Finalize</RkText>
                     </RkButton>
                     <RkButton
                         style={styles.skipButton}
-                        onPress={null}>
+                        onPress={() => {this.props.navigation.navigate('Quest2')}}>
                         <RkText>Skip</RkText>
                     </RkButton>
                 </View>
@@ -47,7 +47,8 @@ export default class QuestScreen extends React.Component {
 const styles = StyleSheet.create({
     questsContainer: {
         width: '100%',
-        paddingLeft: 10,
+        paddingLeft: 15,
+        paddingRight: 15,
         paddingTop: 40,
         justifyContent: 'center'
     },
@@ -57,9 +58,9 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     descriptionText: {
-        fontSize: 15,
+        fontSize: 18,
         paddingTop: 10,
-        textAlign: 'justify'
+        textAlign: 'center'
     },
     rewardsText: {
         paddingTop: 10,

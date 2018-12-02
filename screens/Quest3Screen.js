@@ -8,7 +8,7 @@ import { createAppContainer } from 'react-navigation';
 import { RkButton, RkText } from "react-native-ui-kitten";
 
 
-export default class QuestScreen extends React.Component {
+export default class Quest3Screen extends React.Component {
     static navigationOptions = {
         header: null,
     };
@@ -16,9 +16,9 @@ export default class QuestScreen extends React.Component {
     render() {
         return (
             <View style={styles.questsContainer}>
-                <Text style={styles.titleText}>Quest title</Text>
-                <Text style={styles.descriptionText}>Quest description</Text>
-                <Text style={styles.rewardsText}>Rewards</Text>
+                <Text style={styles.titleText}>FINNAIR: Promotional quest</Text>
+                <Text style={styles.descriptionText}>Take a photo on the airport and share it on social networks with #finnair and the code #gi43b3r. You will enter the contest for the best photo, winners will be announced next week</Text>
+                <Text style={styles.rewardsText}>100 AirCoins</Text>
                 <TextInput
                     placeholder={'Password'}
                     placeholderTextColor="#202020"
@@ -47,7 +47,8 @@ export default class QuestScreen extends React.Component {
 const styles = StyleSheet.create({
     questsContainer: {
         width: '100%',
-        paddingLeft: 10,
+        paddingLeft: 15,
+        paddingRight: 15,
         paddingTop: 40,
         justifyContent: 'center'
     },
@@ -57,9 +58,9 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     descriptionText: {
-        fontSize: 15,
+        fontSize: 18,
         paddingTop: 10,
-        textAlign: 'justify'
+        textAlign: 'center'
     },
     rewardsText: {
         paddingTop: 10,

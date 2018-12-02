@@ -18,7 +18,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.questsContainer}>
 
           <TouchableOpacity  onPress={() => {
-              this.props.navigation.navigate('Quest')}}>
+              this.props.navigation.navigate('Quest1')}}>
               <Image style={styles.img} source={require('../assets/queuing.png')} />
 
           </TouchableOpacity>
