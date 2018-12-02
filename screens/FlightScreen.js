@@ -17,7 +17,9 @@ export default class FlightScreen extends React.Component {
     render() {
         return (
             <View style={styles.questsContainer}>
-                <Text rkType={'xlarge'}>Do you want an advise at the bearding time?</Text>
+                <Text  style={styles.text}>Do you want an advise at the bearding time?</Text>
+
+
             </View>
         );
     }
@@ -25,9 +27,20 @@ export default class FlightScreen extends React.Component {
 const styles = StyleSheet.create({
     questsContainer: {
         width: '100%',
-        paddingLeft: 10,
-        paddingTop: 300,
+        height: '100%',
         justifyContent: 'center',
-        backgroundColor: 'green'
-}
+        backgroundColor: 'green',
+        alignItems: 'center'
+},
+    msg: {
+        justifyContent: 'center'
+    },
+    text: {
+        backgroundColor: 'transparent',
+        color: '#fff',
+        fontSize: 20,
+        paddingBottom: 5,
+        marginEnd: 40,
+        marginStart: 40
+  },
 });
