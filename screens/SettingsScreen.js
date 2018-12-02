@@ -3,6 +3,7 @@ import React from 'react';
 import {
     FlatList,
     View,
+    Alert,
     Image,
     TouchableOpacity,
     Modal,
@@ -85,17 +86,12 @@ export default class SettingsScreen extends React.Component  {
         this.setModalVisible(true);
     };
 
-    buyAlert = () => {
-        Alert.alert(
-            'Pay with PayPal?',
-            '',
-            [
-                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                {text: 'OK', onPress: () => this.props.navigation.navigate('Home')},
-            ],
-            { cancelable: false }
-        )
-    }
+    buyAlert = (title, message) => {
+        Alert.alert('Pay with PayPal?', '', [
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+            {text: 'OK', onPress: () => this.props.navigation.navigate('Home')},
+        ], {cancelable: false})
+    };
 
     extractItemKey = (item) => `${item.id}`;
 
