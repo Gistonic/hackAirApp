@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingLeft: 15,
         paddingRight: 15,
-        paddingTop: 40,
+        paddingTop: 150,
         justifyContent: 'center'
     },
     titleText: {
@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 40
     },
     finalizeButton: {
         marginLeft: -10
