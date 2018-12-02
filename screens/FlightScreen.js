@@ -2,9 +2,9 @@ import React from 'react';
 import {
     StyleSheet,
     TextInput,
-
     Text,
     View,
+    Button
 } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
@@ -18,6 +18,19 @@ export default class FlightScreen extends React.Component {
         return (
             <View style={styles.questsContainer}>
                 <Text  style={styles.text}>Do you want an advise at the bearding time?</Text>
+                <TextInput
+                    placeholder={'Flight code'}
+                    placeholderTextColor="#202020"
+                    style={styles.input}
+                    underlineColorAndroid='rgba(0,0,0,0)'
+                />
+                <Button
+                    onPress={() => {
+                        this.props.navigation.navigate('Home')}}
+                    title="Accept"
+
+                    accessibilityLabel="Learn more about this purple button"
+                />
 
 
             </View>
@@ -30,7 +43,8 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
         backgroundColor: 'green',
-        alignItems: 'center'
+        alignItems: 'center',
+
 },
     msg: {
         justifyContent: 'center'
@@ -43,4 +57,14 @@ const styles = StyleSheet.create({
         marginEnd: 40,
         marginStart: 40
   },
+    input: {
+        margin: 15,
+        height: 40,
+        width:300,
+        borderColor: '#fff',
+        backgroundColor:'#fff',
+        borderWidth: 1,
+        borderRadius:20,
+        paddingStart: 20,
+    },
 });
