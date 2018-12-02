@@ -19,12 +19,6 @@ export default class Quest3Screen extends React.Component {
                 <Text style={styles.titleText}>FINNAIR: Promotional quest</Text>
                 <Text style={styles.descriptionText}>Take a photo on the airport and share it on social networks with #finnair and the code #gi43b3r. You will enter the contest for the best photo, winners will be announced next week</Text>
                 <Text style={styles.rewardsText}>100 AirCoins</Text>
-                <TextInput
-                    placeholder={'Password'}
-                    placeholderTextColor="#202020"
-                    style={styles.input}
-                    underlineColorAndroid='rgba(0,0,0,0)'
-                />
                 <View style={styles.rowContainer}>
                     <RkButton
                         style={styles.finalizeButton}
@@ -77,6 +71,7 @@ const styles = StyleSheet.create({
         paddingStart: 20,
     },
     rowContainer: {
+        paddingTop: 10,
         width: '100%',
         flexDirection: 'row',
         flexWrap: 'wrap',

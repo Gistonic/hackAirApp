@@ -25,7 +25,7 @@ export default class HomeScreen extends React.Component {
 
 
           <TouchableOpacity  onPress={() => {
-              this.props.navigation.navigate('Quest')}}>
+              this.props.navigation.navigate('Quest1')}}>
               <Image style={styles.img} source={require('../assets/exploring.png')} />
 
           </TouchableOpacity>
