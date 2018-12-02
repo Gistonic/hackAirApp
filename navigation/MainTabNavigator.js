@@ -18,7 +18,8 @@ const HomeStack = createStackNavigator({
     Quest: QuestScreen,
     Quest1: Quest1Screen,
     Quest2: Quest2Screen,
-    Quest3: Quest3Screen
+    Quest3: Quest3Screen,
+
 });
 
 HomeStack.navigationOptions = {

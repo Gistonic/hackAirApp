@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    Alert,
     StyleSheet,
     Text, TextInput,
     View,
@@ -8,9 +9,15 @@ import { createAppContainer } from 'react-navigation';
 import { RkButton, RkText } from "react-native-ui-kitten";
 
 
+
 export default class Quest3Screen extends React.Component {
     static navigationOptions = {
         header: null,
+    };
+    endAlert = (title, message) => {
+        Alert.alert('It is the boarding time!', 'Go to the 25th gate', [
+            {text: 'OK', onPress: () => console.log("")},
+        ], {cancelable: false})
     };
 
     render() {
@@ -22,7 +29,7 @@ export default class Quest3Screen extends React.Component {
                 <View style={styles.rowContainer}>
                     <RkButton
                         style={styles.finalizeButton}
-                        onPress={null}>
+                        onPress={this.endAlert}>
                         <RkText>Finalize</RkText>
                     </RkButton>
                     <RkButton
@@ -45,6 +52,7 @@ const styles = StyleSheet.create({
         paddingRight: 15,
         paddingTop: 40,
         justifyContent: 'center'
+
     },
     titleText: {
         fontSize: 20,

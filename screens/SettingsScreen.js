@@ -87,9 +87,14 @@ export default class SettingsScreen extends React.Component  {
     };
 
     buyAlert = (title, message) => {
-        Alert.alert('Pay with PayPal?', '', [
-            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-            {text: 'OK', onPress: () => this.props.navigation.navigate('Home')},
+        Alert.alert('Amazing prize!', 'You have won a little Rudolff!', [
+            {text: 'OK', onPress: () => console.log("")},
+        ], {cancelable: false})
+    };
+    PremioAlert = (title, message) => {
+        Alert.alert('New achievement', 'You have obtained a new achievement',[
+            {text: 'See it', onPress: () => this.props.navigation.navigate('Links')},
+            {text: 'OK', onPress: () => console.log("")},
         ], {cancelable: false})
     };
 
@@ -105,7 +110,7 @@ export default class SettingsScreen extends React.Component  {
                     <TouchableOpacity
                         delayPressIn={70}
                         activeOpacity={0.8}
-                        onPress={this.onItemPressed}>
+                        onPress={this.PremioAlert}>
                         <LinearGradient
                             colors={gradient}
                             start={{ x: 0.0, y: 0.5 }}
