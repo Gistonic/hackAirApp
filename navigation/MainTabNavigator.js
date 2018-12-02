@@ -7,9 +7,11 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import QuestScreen from "../screens/QuestScreen";
+import FlightScreen from "../screens/FlightScreen";
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+  Flight: FlightScreen,
+    Home: HomeScreen,
     Quest: QuestScreen
 });
 
