@@ -14,7 +14,7 @@ import formatNumber from './../utils/textUtils';
 
 export default class LinksScreen extends React.Component {
     static navigationOptions = {
-        title: 'Links',
+        title: 'Profile',
     };
 
     state = {
@@ -35,23 +35,19 @@ export default class LinksScreen extends React.Component {
             </View>
             <View style={[styles.userInfo, styles.bordered]}>
                 <View style={styles.section}>
-                    <RkText rkType='header3' style={styles.space}>{this.state.data.postCount}</RkText>
-                    <RkText rkType='secondary1 hintColor'>Posts</RkText>
+                    <RkText rkType='header3' style={styles.space}>5</RkText>
+                    <RkText rkType='secondary1 hintColor'>Quests</RkText>
                 </View>
                 <View style={styles.section}>
-                    <RkText rkType='header3' style={styles.space}>{formatNumber(this.state.data.followersCount)}</RkText>
-                    <RkText rkType='secondary1 hintColor'>Followers</RkText>
+                    <RkText rkType='header3' style={styles.space}>{formatNumber(5)}</RkText>
+                    <RkText rkType='secondary1 hintColor'>Level</RkText>
                 </View>
                 <View style={styles.section}>
-                    <RkText rkType='header3' style={styles.space}>{this.state.data.followingCount}</RkText>
-                    <RkText rkType='secondary1 hintColor'>Following</RkText>
+                    <RkText rkType='header3' style={styles.space}>3</RkText>
+                    <RkText rkType='secondary1 hintColor'>Airports</RkText>
                 </View>
             </View>
-            <View style={styles.buttons}>
-                <RkButton style={styles.button} rkType='clear link'>FOLLOW</RkButton>
-                <View style={styles.separator} />
-                <RkButton style={styles.button} rkType='clear link'>MESSAGE</RkButton>
-            </View>
+
             <Gallery items={this.state.data.images} />
         </ScrollView>
     );

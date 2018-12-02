@@ -6,9 +6,11 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import QuestScreen from "../screens/QuestScreen";
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
+    Quest: QuestScreen
 });
 
 HomeStack.navigationOptions = {
@@ -52,6 +54,10 @@ SettingsStack.navigationOptions = {
     />
   ),
 };
+
+const QuestStack = createStackNavigator({
+    Quest: QuestScreen,
+});
 
 export default createBottomTabNavigator({
   HomeStack,

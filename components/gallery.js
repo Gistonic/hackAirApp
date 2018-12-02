@@ -40,9 +40,7 @@ export class Gallery extends React.Component {
     </View>
   );
 
-  renderFooter = () => (
-    <SocialBar />
-  );
+
 
   renderItem = ({ index }) => (
     <RkModalImg
