@@ -85,6 +85,18 @@ export default class SettingsScreen extends React.Component  {
         this.setModalVisible(true);
     };
 
+    buyAlert = () => {
+        Alert.alert(
+            'Pay with PayPal?',
+            '',
+            [
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => this.props.navigation.navigate('Home')},
+            ],
+            { cancelable: false }
+        )
+    }
+
     extractItemKey = (item) => `${item.id}`;
 
     renderItem = ({ item }) => {
@@ -126,7 +138,7 @@ export default class SettingsScreen extends React.Component  {
                     <TouchableOpacity
                         delayPressIn={70}
                         activeOpacity={0.8}
-                        onPress={this.onItemPressed}>
+                        onPress={this.buyAlert}>
                         <LinearGradient
                             colors={gradient}
                             start={{ x: 0.0, y: 0.5 }}
