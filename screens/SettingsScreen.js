@@ -19,6 +19,8 @@ import { data } from './../data';
 import { PasswordTextInput } from './../components/passwordTextInput';
 import { UIConstants } from './../config/appConstants';
 import { scaleVertical } from './../utils/scale';
+import { Icon } from 'react-native-elements'
+
 
 export default class SettingsScreen extends React.Component  {
     static navigationOptions = {
@@ -45,7 +47,7 @@ export default class SettingsScreen extends React.Component  {
             case 'visa':
                 return {
                     gradient: ['#63e2ff', '#712ec3'],
-                    icon: require('../assets/icons/visaIcon.png'),
+                    icon: 'md-cash',
                 };
             case 'mastercard':
                 return {
@@ -54,7 +56,7 @@ export default class SettingsScreen extends React.Component  {
                 };
             case 'axp':
                 return {
-                    gradient: ['#42e695', '#3bb2bb'],
+                    gradient: ['#bdc3c7', '#2c3e50'],
                     icon: require('./../assets/icons/americanExpressIcon.png'),
                 };
             default: return {};
@@ -62,13 +64,7 @@ export default class SettingsScreen extends React.Component  {
     };
 
     formatCurrency = (amount, currency) => {
-        switch (currency) {
-            case 'usd':
-                return `$${amount}`;
-            case 'eur':
-                return `€${amount}`;
-            default: return '';
-        }
+        return `AC ${amount}`;
     };
 
     prepareCardNo = (cardNo) => {
@@ -95,44 +91,62 @@ export default class SettingsScreen extends React.Component  {
         const { gradient, icon } = this.getCardStyle(item.type);
         const { firstPart, lastPart } = this.prepareCardNo(item.cardNo);
 
-        return (
-            <RkCard rkType='credit' style={styles.card}>
-                <TouchableOpacity
-                    delayPressIn={70}
-                    activeOpacity={0.8}
-                    onPress={this.onItemPressed}>
-                    <LinearGradient
-                        colors={gradient}
-                        start={{ x: 0.0, y: 0.5 }}
-                        end={{ x: 1, y: 0.5 }}
-                        style={styles.background}>
-                        <View rkCardHeader>
-                            <RkText rkType='header4 inverseColor'>{item.bank}</RkText>
-                            <Image source={icon} />
-                        </View>
-                        <View rkCardContent>
-                            <View style={styles.cardNoContainer}>
-                                <RkText style={styles.cardNo} rkType='header2 inverseColor'>{firstPart}</RkText>
-                                <RkText style={[styles.cardNo, styles.cardPlaceholder]} rkType='header2 inverseColor'>* * * *</RkText>
-                                <RkText style={[styles.cardNo, styles.cardPlaceholder]} rkType='header2 inverseColor'>* * * *</RkText>
-                                <RkText style={styles.cardNo} rkType='header2 inverseColor'>{lastPart}</RkText>
+        if (item.type === "visa"){
+            return (
+                <RkCard rkType='credit' style={styles.card}>
+                    <TouchableOpacity
+                        delayPressIn={70}
+                        activeOpacity={0.8}
+                        onPress={this.onItemPressed}>
+                        <LinearGradient
+                            colors={gradient}
+                            start={{ x: 0.0, y: 0.5 }}
+                            end={{ x: 1, y: 0.5 }}
+                            style={styles.background}>
+                            <View rkCardHeader>
+                                <RkText rkType='header4 inverseColor large'>{item.bank}</RkText>
+                                <Icon name='local-atm' />
                             </View>
-                            <RkText style={styles.date} rkType='header6 inverseColor'>{item.date}</RkText>
-                        </View>
-                        <View rkCardFooter>
-                            <View>
-                                <RkText rkType='header4 inverseColor'>{item.currency.toUpperCase()}</RkText>
-                                <RkText rkType='header6 inverseColor'>{item.name.toUpperCase()}</RkText>
+                            <View rkCardFooter>
+                                <View>
+                                    <RkText rkType='header6 inverseColor'>{item.name}</RkText>
+                                </View>
+                                <RkText
+                                    rkType='header2 inverseColor'>{this.formatCurrency(item.amount, item.currency)}
+                                </RkText>
                             </View>
-                            <RkText
-                                rkType='header2 inverseColor'>{this.formatCurrency(item.amount, item.currency)}
-                            </RkText>
-                        </View>
 
-                    </LinearGradient>
-                </TouchableOpacity>
-            </RkCard>
-        );
+                        </LinearGradient>
+                    </TouchableOpacity>
+                </RkCard>
+            );
+        } else {
+            return (
+                <RkCard rkType='credit' style={styles.card}>
+                    <TouchableOpacity
+                        delayPressIn={70}
+                        activeOpacity={0.8}
+                        onPress={this.onItemPressed}>
+                        <LinearGradient
+                            colors={gradient}
+                            start={{ x: 0.0, y: 0.5 }}
+                            end={{ x: 1, y: 0.5 }}
+                            style={styles.background}>
+                            <View rkCardHeader>
+                                <RkText rkType='header4 inverseColor large'>{item.bank}</RkText>
+                                <Icon name='redeem' />
+                            </View>
+                            <View rkCardFooter>
+                                <RkText
+                                    rkType='header2 inverseColor'>{this.formatCurrency(item.amount, item.currency)}
+                                </RkText>
+                            </View>
+
+                        </LinearGradient>
+                    </TouchableOpacity>
+                </RkCard>
+            );
+        }
     };
 
     render = () => (

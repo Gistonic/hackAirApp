@@ -1,40 +1,44 @@
 const cards =
   [{
     id: 1,
-    name: 'Cindee Seton',
-    bank: 'CitiBank',
-    amount: 440,
-    date: '07/19',
-    cardNo: '3538********8699',
+    name: 'Current balance',
+    bank: 'Wallet',
+    amount: 40,
+    date: '',
+    cardNo: '',
     type: 'visa',
-    currency: 'usd',
+    currency: '',
+    image: ''
   }, {
     id: 2,
     name: 'Cindee Seton',
-    bank: 'CitiBank',
-    amount: 1740,
-    date: '07/19',
-    cardNo: '5602********1161',
+    bank: 'Random Prize',
+    amount: 50,
+    date: '',
+    cardNo: '',
     type: 'mastercard',
-    currency: 'eur',
+    currency: '',
+    image: ''
   }, {
     id: 3,
     name: 'Cindee Seton',
-    bank: 'CitiBank',
-    amount: 2120,
-    date: '09/24',
-    cardNo: '3379********5427',
+    bank: 'NGO Donation (5€)',
+    amount: 100,
+    date: '',
+    cardNo: '',
     type: 'axp',
-    currency: 'usd',
+    currency: '',
+    image: ''
   }, {
     id: 4,
     name: 'Cindee Seton',
-    bank: 'CitiBank',
-    amount: 3150,
-    date: '02/21',
-    cardNo: '4911********8396',
-    type: 'visa',
-    currency: 'eur',
+    bank: 'Airplane Points',
+    amount: 1000,
+    date: '',
+    cardNo: '',
+    type: 'axp',
+    currency: '',
+    image: ''
   }];
 
 export default cards;
